@@ -9,7 +9,9 @@ Use `forEach` to loop over the input array and work with each value.  Push the n
 ------------------------------------------------------------------------------------------------ */
 
 const addOne = (arr) => {
-  // Solution code here...
+  let arrNew = [];
+  arr.forEach(i => arrNew.push(i + 1));
+  return arrNew;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -21,6 +23,9 @@ Use `forEach` to loop over the input array. Modify each string, and add the upda
 ------------------------------------------------------------------------------------------------ */
 
 const addExclamation = (arr) => {
+  let arrNew = [];
+  arr.forEach(i => arrNew.push(`${i}!`));
+  return arrNew;
   // Solution code here...
 };
 
@@ -33,6 +38,9 @@ Use `forEach` to loop over the input array. The modified strings should each be 
 ------------------------------------------------------------------------------------------------ */
 
 const allUpperCase = (arr) => {
+  let arrNew = [];
+  arr.forEach(i => arrNew.push(i.toUpperCase()));
+  return arrNew;
   // Solution code here...
 };
 
@@ -41,16 +49,21 @@ CHALLENGE 4
 
 Write a function named `greeting` that takes in a single string and returns the string in all uppercase letters, and followed by an "!".
 
-Then, write a function named `speaker` that takes in an array of strings and a callback function. 
+Then, write a function named `speaker` that takes in an array of strings and a callback function.
 
-Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array. 
+Use `forEach` to build a new array of strings, each string modified by the callback. Return the new array.
 ------------------------------------------------------------------------------------------------ */
 
 const greeting = (word) => {
+  let loud = `${word.toUpperCase()}!`;
+  return loud;
   // Solution code here...
 };
 
 const speaker = (words, callback) => {
+  let arrNew1 = [];
+  words.forEach(i => arrNew1.push(callback(i)));
+  return arrNew1;
   // Solution code here...
 };
 
@@ -71,10 +84,15 @@ Return the modified array.
 ------------------------------------------------------------------------------------------------ */
 
 const addValues = (arr, value) => {
+  arr.push(value);
   // Solution code here...
 };
 
 const addNumbers = (num, arr, times, callback) => {
+  for (let i = 0; i < times.length; i++){
+    callback(arr, num);
+  }
+  return arr;
   // Solution code here...
 };
 
@@ -97,6 +115,9 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
+  // let newArr = [];
+  // availableItems.forEach(i =>
+  //   if(i.apples=== true); // I need help with this. I am confused on how to write if statement with a forEach loop. I might be over thinking it but im stuck on this.
   // Solution code here...
 };
 
