@@ -115,10 +115,13 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // let newArr = [];
-  // availableItems.forEach(i =>
-  //   if(i.apples=== true); // I need help with this. I am confused on how to write if statement with a forEach loop. I might be over thinking it but im stuck on this.
-  // Solution code here...
+  const list = [];
+  availableItems.forEach(item => {
+    if(item.available){
+    list.push(item.name)
+
+  return list;
+}
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -136,7 +139,19 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
+  const output = [];
+
+  arr.forEach(num =>{
+    if(num % 5 === 0 && num % 3 === 0){
+      output.push('Fizz Buzz');
+    } else if (num % 3 === 0){
+      output.push ('Buzz');
+    } else {
+      output.push(num);
+    }
+
+      return output;
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
