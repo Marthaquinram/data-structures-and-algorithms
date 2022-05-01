@@ -89,8 +89,7 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  return arr.map(charCo => ) //i dont understand this
-  // Solution code here...
+  return arr.map(character => character.charCodeAt());
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -104,9 +103,30 @@ For example: evenOdd([1,2,3]) returns ['odd','even','odd'].
 ------------------------------------------------------------------------------------------------ */
 
 const evenOdd = (arr) => {
-  // Solution code here...
+  let newArr = [];
+  arr.map(element => {
+    if (element % 2 === 1){
+      newArr.push('odd');
+    } else if (element % 2 === 0){
+      newArr.push('even');
+    } else {
+      newArr.push('N/A');
+    }
+  });
+  return newArr;
 };
 
+//use map
+//return a new array
+//in returned array each result should be a string
+// [5, 8, 2, 6, 9, 13, 542, 541]
+//if 5 is odd return the string odd
+// element % 2 === 1
+//newArr.push('odd')
+// element % 2 === 0
+//newArr.push('even')
+//else
+//newArr.push('N/A')
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
 
@@ -262,14 +282,14 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should return an array containing the character code for each letter', () => {
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1'])).toStrictEqual([ 67, 111, 100, 101, 51, 48, 49 ]);
     expect(charCode(['C', 'o', 'd', 'e', '3', '0', '1']).length).toStrictEqual(7);
   });
 });
 
-xdescribe('Testing challenge 8', () => {
+describe('Testing challenge 8', () => {
   test('It should return an array containing the keys from an object', () => {
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541])).toStrictEqual([ 'odd', 'even', 'even', 'even', 'odd', 'odd', 'even', 'odd' ]);
     expect(evenOdd([5, 8, 2, 6, 9, 13, 542, 541]).length).toStrictEqual(8);
