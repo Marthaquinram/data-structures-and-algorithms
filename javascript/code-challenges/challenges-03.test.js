@@ -38,9 +38,8 @@ Write a function named containsAnd that, given an array of strings as input, use
 For example, containsAnd(['panda', 'ran', 'and']) returns ['panda', 'and'].
 ------------------------------------------------------------------------------------------------ */
 
-const containsAnd = (arr) => {
-  return arr.filter(and => and.includes('and')); //found similar solution on stack overflow while searching .filter
-};
+const containsAnd = (arr) => arr.filter(str => str.includes('and')); //found similar solution on stack overflow while searching .filter
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -62,9 +61,7 @@ Write a function named notInFirstArray that, given two arrays as input, uses fil
 For example, notInFirstArray([1,2,3], [1,2,3,4]) returns [4].
 ------------------------------------------------------------------------------------------------ */
 
-const notInFirstArray = (forbiddenValues, arr) => {
-  // return arr.filter(integer =>  );    // stuck on this. I over all understand how .filter works i just dont know how to proply write what i want it to do.
-};
+const notInFirstArray = (forbiddenValues, arr) => arr.filter(element => !forbiddenValues.includes(element));
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
@@ -106,7 +103,7 @@ const snorlaxData = {
 };
 
 const getBaseStatGreaterThan = (arr, minBaseStat) => {
-  // return arr.filter( => .Stat > 0);
+  return arr.filter(element => element.baseStat > minBaseStat);
 
 };
 
