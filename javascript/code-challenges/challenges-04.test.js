@@ -117,6 +117,7 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 
 const sortNumbersByLength = (arr) => {
   return arr.sort((a, b) => a.toString().length - b.toString().length);
+}
 
 /*-----------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -138,6 +139,7 @@ const people = [
 
 const sortPeople = (arr) => {
   return arr.sort((a, b) => a.lastName > b.lastName ? 1 : (a.lastName < b.lastName ? -1 : 0));
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 11 - Stretch Goal
