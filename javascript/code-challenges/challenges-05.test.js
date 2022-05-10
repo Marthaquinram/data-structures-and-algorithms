@@ -12,7 +12,9 @@ Note the space in between first and last names.
 You can assume that neither firstName nor lastName will be blank
 ------------------------------------------------------------------------------------------------ */
 const toLastNames = people => {
-  //still working on this
+  let newList = [];
+  people.map(newName => newList.push(`${newName.firstName} ${newName.lastName}`));
+  return newList;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -22,9 +24,8 @@ Write a function named addValues that, given an array of numbers as input, uses 
 
 ------------------------------------------------------------------------------------------------ */
 
-const addValues = (arr) => {
-  //still working on this
-};
+const addValues = (arr) => arr.reduce((tValue, inputValue) => tValue + inputValue, 0);
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -38,9 +39,7 @@ Write a function named addPurchases that, given an array of objects as input, us
 
 ------------------------------------------------------------------------------------------------ */
 
-const addPurchases = (arr) => {
-  // Solution code here...
-};
+const addPurchases = (arr) => arr.reduce((totalAmountPurchased, item) => totalAmountPurchased + item.purchasePrice, 0);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -50,9 +49,10 @@ Write a function named countNumberOfElements that, given an array as input, uses
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
-const countNumberOfElements = (arr) => {
-  // Solution code here...
-};
+const countNumberOfElements = (arr) => arr.reduce(); //I dont know how to do it without array.length
+
+
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -122,9 +122,10 @@ Write a function named reversedString that takes in a string and returns a strin
 Note: You must use reduce for this challenge. You may not use the built-in .reverse() string method.
 ------------------------------------------------------------------------------------------------ */
 
-const reversedString = (str) => {
-  // Solution code here...
-};
+const reversedString = (str) => str.split('').reduce((pV, cV) => cV + pV, '');
+
+//('')<--give me a character in its own spring.
+//chaining method chaining one after another.
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
