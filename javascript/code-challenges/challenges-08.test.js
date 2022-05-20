@@ -116,9 +116,11 @@ Return an array containing all the matches.
 ------------------------------------------------------------------------------------------------ */
 
 const isCapitalized = (str) => {
-  // Solution code here...
+  const cap = /\b[A-Z][a-z]*/g;
+  let words = str.match(cap);
+  return words || [];
 };
-
+//did this with class code review.
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
@@ -126,7 +128,7 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  // Solution code here...
+  const patter = /^
 };
 
 /* ------------------------------------------------------------------------------------------------
