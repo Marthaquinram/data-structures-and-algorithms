@@ -75,8 +75,13 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  // Object.entries(obj);
-//stuck on this challenge
+  const arr = [];
+  const keys = Object.keys(obj);
+  const values = Object.values(obj);
+  for (let i = 0; i < keys.length; i++){
+    arr.push(`${keys[i]}: ${values[i]}`);
+  }
+  return arr;
 };
 
 
@@ -132,10 +137,10 @@ const characters = [
 //Write a function named getHouses that returns a new array containing the names of all of the houses in the data set.
 const getHouses = (arr) => {
   let houses = [];
-  // got stuck on this.
+  // arr.push(characters.house);
   return houses;
 };
-
+// Write a function named getHouses that returns a new array containing the names of all of the houses in the data set.
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
