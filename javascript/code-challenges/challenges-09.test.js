@@ -9,10 +9,9 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  let maxArr = arr.reduce((previousValue, currentValue) => {
+  return arr.reduce((previousValue, currentValue) => {
     return (previousValue > currentValue ? previousValue : currentValue);
   });
-  return maxArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -30,13 +29,14 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 //push info into new array
 //
 
-const getCourseKeys = (obj) => {
-  let arr1 = [];
-  for (let keys in courseInfo){
-    arr1.push(keys);
-  }
-  return arr1;
-};
+const getCourseKeys = (obj) => Object.keys(obj);
+//   let arr1 = [];
+//   for (let keys in courseInfo){
+//     arr1.push(keys);
+//   }
+//   return arr1;
+
+// return Object.keys(obj);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -75,8 +75,13 @@ HR has asked you to change the data to make it easier to print so that it looks 
 ------------------------------------------------------------------------------------------------ */
 
 const updateNumbers = (obj) => {
-  // Object.entries(obj);
-//stuck on this challenge
+  const arr = [];
+  const keys = Object.keys(obj);
+  const values = Object.values(obj);
+  for (let i = 0; i < keys.length; i++){
+    arr.push(`${keys[i]}: ${values[i]}`);
+  }
+  return arr;
 };
 
 
@@ -130,11 +135,9 @@ const characters = [
   },
 ];
 //Write a function named getHouses that returns a new array containing the names of all of the houses in the data set.
-const getHouses = (arr) => {
-  let houses = [];
-  // got stuck on this.
-  return houses;
-};
+const getHouses = (arr) => arr.map(haus =>haus.house);
+
+
 
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
