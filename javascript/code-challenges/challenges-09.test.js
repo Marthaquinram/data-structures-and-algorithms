@@ -9,10 +9,9 @@ using the 'reduce' method.
 E.g. [4,2,7,5,9,2] -> 9
 ------------------------------------------------------------------------------------------------ */
 const maxInArray = (arr) => {
-  let maxArr = arr.reduce((previousValue, currentValue) => {
+  return arr.reduce((previousValue, currentValue) => {
     return (previousValue > currentValue ? previousValue : currentValue);
   });
-  return maxArr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -30,13 +29,14 @@ const courseInfo = { name: 'Code 301', duration: { dayTrack: '4 weeks', eveningT
 //push info into new array
 //
 
-const getCourseKeys = (obj) => {
-  let arr1 = [];
-  for (let keys in courseInfo){
-    arr1.push(keys);
-  }
-  return arr1;
-};
+const getCourseKeys = (obj) => Object.keys(obj);
+//   let arr1 = [];
+//   for (let keys in courseInfo){
+//     arr1.push(keys);
+//   }
+//   return arr1;
+
+// return Object.keys(obj);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -135,12 +135,10 @@ const characters = [
   },
 ];
 //Write a function named getHouses that returns a new array containing the names of all of the houses in the data set.
-const getHouses = (arr) => {
-  let houses = [];
-  // arr.push(characters.house);
-  return houses;
-};
-// Write a function named getHouses that returns a new array containing the names of all of the houses in the data set.
+const getHouses = (arr) => arr.map(haus =>haus.house);
+
+
+
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 6
 
