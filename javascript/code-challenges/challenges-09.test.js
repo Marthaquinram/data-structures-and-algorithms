@@ -1,5 +1,7 @@
 'use strict';
 
+const { children } = require("cheerio/lib/api/traversing");
+
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
@@ -152,9 +154,20 @@ hasChildrenValues(characters, 'Sansa') will return false
 ------------------------------------------------------------------------------------------------ */
 
 const hasChildrenValues = (arr, character) => {
-  // Solution code here...
-
+  //0 is falsey
+  let children = 0;
+  arr.forEach(value => {
+    if(value.name === character){
+      Object.keys(value).forEach((key, idx) => {
+        if (key === 'children'){
+          children = Object.values(value)[idx].length;
+        }
+      });
+    }
+  });
+  return children ? true : false;
 };
+//worked on this with class during code challenge
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
