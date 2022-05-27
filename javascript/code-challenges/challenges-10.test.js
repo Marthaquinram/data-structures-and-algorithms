@@ -8,10 +8,9 @@ Write a function named returnTen, takes in a string and uses split and splice to
 ------------------------------------------------------------------------------------------------ */
 
 function returnTen(str){
-  // Solution code here...
-  //havent started this yet
+  return str.split('').splice(str.length - 10, 10);
 }
-
+// did this with class during class review.
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -27,10 +26,11 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  // Solution code here...
-  //still working on this.
+  let highVal = 0;
+  matrix.forEach(array => array.forEach(value => { if(value > highVal) {highVal = value; }}));
+  return highVal;
 };
-
+  // did this with class during class review.
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -44,10 +44,11 @@ For example:
 ]
 
 return: 35
------------------------------------------------------------------------------------------------- */
-const totalSum = (matrix) => {
-  // Solution code here...
-};
+// ------------------------------------------------------------------------------------------------ */
+// const totalSum = (matrix) => {
+//   // Solution code here...
+//havent attempted this, will be working on this
+// };
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -72,10 +73,10 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
-const grandTotal = (stores) => {
-  // Solution code here...
-
-};
+// const grandTotal = (stores) => {
+//   // Solution code here...
+//havent attempted this, will be working on this
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
@@ -87,9 +88,10 @@ Here is sample data for the 9:00 sales: { sales: '88 cookies', time: '9 a.m.' }.
 Write a function named salesData that uses forEach to iterate over the hourlySales array and create an object for each hour. Return an array of the formatted data.
 ------------------------------------------------------------------------------------------------ */
 
-const salesData = (hours, data) => {
-  // Solution code here...
-};
+// const salesData = (hours, data) => {
+//   // Solution code here...
+//havent attempted this will be working on this
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -112,9 +114,9 @@ const errands = [
   }
 ];
 
-const howManyTreats = (arr) => {
-  // Solution code here...
-};
+const howManyTreats = (arr) => arr[2].items[1].quantity;
+// did this with class during class review.
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
