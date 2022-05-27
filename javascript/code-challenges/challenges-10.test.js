@@ -8,8 +8,7 @@ Write a function named returnTen, takes in a string and uses split and splice to
 ------------------------------------------------------------------------------------------------ */
 
 function returnTen(str){
-  // Solution code here...
-  //havent started this yet
+  str.split('').splice(str.length -10, 10);
 }
 
 /* ------------------------------------------------------------------------------------------------
@@ -26,10 +25,9 @@ For example:
 
 return: 23
 ------------------------------------------------------------------------------------------------ */
-const findMax = (matrix) => {
-  // Solution code here...
-  //still working on this.
-};
+// const findMax = (matrix) => {
+//   let highVal =
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -112,9 +110,8 @@ const errands = [
   }
 ];
 
-const howManyTreats = (arr) => {
-  // Solution code here...
-};
+const howManyTreats = (arr) => arr[2].items[1].quantity;
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 7 - Stretch Goal
