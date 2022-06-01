@@ -19,8 +19,9 @@ Becomes:
 ------------------------------------------------------------------------------------------------ */
 
 function transformToLis(obj){
-  // Solution code here...
-};
+  return Object.entries(obj).map(value => `<li>${value[0]}: ${value[1]}</li>`);
+}
+//class review code demo.
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
@@ -32,9 +33,9 @@ Note: You might need to use the same method more than once.
 For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
-const count = (target, input) => {
-  // Solution code here...
-};
+// const count = (target, input) => {
+//   // Solution code here...
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -46,9 +47,9 @@ You may want to use filter, map, or reduce for this problem, but are not require
 For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
-const totalSum = (input) => {
-  // Solution code here...
-};
+// const totalSum = (input) => {
+//   // Solution code here...
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -63,9 +64,11 @@ For example, [ [0,2,5,4], [2,4,10], [] ] should return [ [1, 32], [1024], [] ].
 ------------------------------------------------------------------------------------------------ */
 
 const divisibleByFiveTwoToThePower = (input) => {
-  // Solution code here...
+  return input.map(array => {
+    return array.filter(element => typeof element === 'number' && element % 5 === 0).map(num => Math.pow(2, num));
+  });
 };
-
+//went over this in class
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -129,8 +132,9 @@ let starWarsData = [{
 }];
 
 let findMaleAndFemale = (data) => {
-  // Solution code here...
+  return data.filter(character => character.gender === 'male' || character.gender === 'female').map(character => character.name).join(' and ');
 };
+//went over this in class
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -139,7 +143,7 @@ Write a function named findShortest that, given the Star Wars data from Challeng
 ------------------------------------------------------------------------------------------------ */
 
 let findShortest = (data) => {
-  // Solution code here...
+  return data.reduce((shortestsofar, nextchar) => Number(shortestsofar.height) < Number(nextchar.height) ? shortestsofar : nextchar).name;
 };
 
 /* ------------------------------------------------------------------------------------------------
