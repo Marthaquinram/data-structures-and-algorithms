@@ -8,9 +8,9 @@ Write a function named returnTen, takes in a string and uses split and splice to
 ------------------------------------------------------------------------------------------------ */
 
 function returnTen(str){
-  return str.split('').splice(str.length - 10, 10);
+  return str.split('').splice(str.length - 10);
 }
-// did this with class during class review.
+//completed with Hexx during code challenge reviews
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -26,10 +26,19 @@ For example:
 return: 23
 ------------------------------------------------------------------------------------------------ */
 const findMax = (matrix) => {
-  let highVal = 0;
-  matrix.forEach(array => array.forEach(value => { if(value > highVal) {highVal = value; }}));
-  return highVal;
+  let max = 0; //this is the counter value, this will check if each number in the array is greater than 0, its comparing the two numbers and reassigning that to the variable max
+  matrix.forEach(arr => {
+    arr.forEach(num => {
+      if (num > max) {
+        max = num;
+      }
+    });
+  });
+  return max;
 };
+  // let highVal = 0;
+  // matrix.forEach(array => array.forEach(value => { if(value > highVal) {highVal = value; }}));
+  // return highVal;
   // did this with class during class review.
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -45,10 +54,16 @@ For example:
 
 return: 35
 // ------------------------------------------------------------------------------------------------ */
-// const totalSum = (matrix) => {
-//   // Solution code here...
-//havent attempted this, will be working on this
-// };
+const totalSum = (matrix) => {
+  let totalSum = 0;
+  matrix.forEach(arr => {
+    arr.forEach(num => {
+      totalSum = totalSum + num;
+    });
+  });
+  return totalSum;
+};
+
 
 
 /* ------------------------------------------------------------------------------------------------
@@ -73,11 +88,19 @@ const alkiBeach = [33, 31, 147, 130, 27, 93, 38, 126, 141, 63, 46, 17];
 
 const cookieStores = [firstPike, seaTac, seattleCenter, capHill, alkiBeach];
 
-// const grandTotal = (stores) => {
-//   // Solution code here...
-//havent attempted this, will be working on this
-// };
+const grandTotal = (stores) => {
+  const hourlySales = [];
+  for (let i = 0; i < stores[0].length; i++) {
+    let hourlyTotal = 0;
+    for (let j = 0; j < stores.length; j++) {
+      hourlyTotal += stores[j][i];
+    }
+    hourlySales.push(hourlyTotal);
+  }
+  return hourlySales;
+};
 
+// need for loop to run through the lenghtn of the first pike array, which is represented by cookies stores thats being past as an argurement functions.
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 5
 
@@ -87,11 +110,19 @@ Here is sample data for the 9:00 sales: { sales: '88 cookies', time: '9 a.m.' }.
 
 Write a function named salesData that uses forEach to iterate over the hourlySales array and create an object for each hour. Return an array of the formatted data.
 ------------------------------------------------------------------------------------------------ */
+//const hoursOpen = ['9 a.m.', '10 a.m.', '11 a.m.', '12 p.m.', '1 p.m.', '2 p.m.', '3 p.m.', '4 p.m.', '5 p.m.', '6 p.m.', '7 p.m.', '8 p.m.'];
+const salesData = (hours, data) => {
+  const salesOverview = [];
 
-// const salesData = (hours, data) => {
-//   // Solution code here...
-//havent attempted this will be working on this
-// };
+  data.forEach((value, idx) => {
+    salesOverview.push({
+      sales: `${value} cookies`,
+      time: hours[idx]
+    });
+  });
+
+  return salesOverview;
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -113,9 +144,9 @@ const errands = [
     items: [{ name: 'Cans of food', quantity: 8 }, { name: 'Treats', quantity: 24 }, { name: 'Leash', quantity: 1 }]
   }
 ];
+//Write a function named howManyTreats that will return the quantity of treats you need to pick up from the pet store today from this array. The structure of the array will not change.
 
 const howManyTreats = (arr) => arr[2].items[1].quantity;
-// did this with class during class review.
 
 
 /* ------------------------------------------------------------------------------------------------
