@@ -10,7 +10,7 @@ Write a function named returnTen, takes in a string and uses split and splice to
 function returnTen(str){
   return str.split('').splice(str.length - 10);
 }
-// did this with class during class review.
+//completed with Hexx during code challenge reviews
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
