@@ -89,7 +89,7 @@ const addValues = (arr, value) => {
 };
 
 const addNumbers = (num, arr, times, callback) => {
-  for (let i = 0; i < times.length; i++){
+  for (let i = 0; i < times; i++){
     callback(arr, num);
   }
   return arr;
@@ -117,11 +117,11 @@ This function should use forEach to populate your grocery list based on the stor
 const createList = (availableItems) => {
   const list = [];
   availableItems.forEach(item => {
-    if(item.available){
-    list.push(item.name)
-
+    if(item.available === true){
+      list.push(item.name);
+    }
+  });
   return list;
-}
 };
 
 /* ------------------------------------------------------------------------------------------------
