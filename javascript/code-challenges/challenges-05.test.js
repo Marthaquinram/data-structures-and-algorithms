@@ -49,7 +49,10 @@ Write a function named countNumberOfElements that, given an array as input, uses
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
-const countNumberOfElements = (arr) => arr.reduce(); //I dont know how to do it without array.length
+const countNumberOfElements = (arr) => {
+
+  return arr.reduce(accumulator => accumulator +1, 0); //reduce iterates through array, and its taking a tally how many loops it goes through, acc gets returned after every loop.
+};
 
 
 
@@ -109,9 +112,12 @@ let starWarsData = [{
   birth_year: '19BBY',
   gender: 'female'
 }];
-
+//Write a function named returnNames that, given the Star Wars data, below, uses reduce to return an array containing the names of the characters.
 const returnNames = (arr) => {
-  // Solution code here...
+  return arr.reduce((accu, currentVal) => {
+    accu.push(currentVal.name);
+    return accu;
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -176,9 +182,9 @@ const characters = [
   },
 ];
 
-const countNumberOfChildren = (arr) => {
-  // Solution code here...
-};
+// const countNumberOfChildren = (arr) => {
+//   // Solution code here...
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8 - Stretch Goal
@@ -188,9 +194,9 @@ Write a function that, given an array of numbers as input, uses reduce to calcul
 Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
-const calculateAverage = (arr) => {
-  // Solution code here...
-};
+// const calculateAverage = (arr) => {
+//   // Solution code here...
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
@@ -200,18 +206,18 @@ Write a function named countPrimeNumbers that, given an array elements as input,
 You are welcome to use the provided isPrime function.
 ------------------------------------------------------------------------------------------------ */
 
-const isPrime = (value) => {
-  for (let i = 2; i < value; i++) {
-    if (value % i === 0) {
-      return false;
-    }
-  }
-  return value > 1;
-};
+// const isPrime = (value) => {
+//   for (let i = 2; i < value; i++) {
+//     if (value % i === 0) {
+//       return false;
+//     }
+//   }
+//   return value > 1;
+// };
 
-const countPrimeNumbers = (arr) => {
-  // Solution code here...
-};
+// const countPrimeNumbers = (arr) => {
+//   // Solution code here...
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -252,9 +258,9 @@ const snorlaxData = {
   weight: 4600,
 };
 
-const extractStat = (statName, arr) => {
-  // Solution code here...
-};
+// const extractStat = (statName, arr) => {
+//   // Solution code here...
+// };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 11 - Stretch Goal
@@ -266,9 +272,9 @@ Write a function named extractChildren that, given the array of characters from 
 2) Then, uses reduce to return an array of all the children's names in the filtered array
 ------------------------------------------------------------------------------------------------ */
 
-const extractChildren = (arr) => {
-  // Solution code here...
-};
+// const extractChildren = (arr) => {
+//   // Solution code here...
+// };
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
