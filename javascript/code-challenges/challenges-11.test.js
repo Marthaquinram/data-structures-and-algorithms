@@ -26,7 +26,7 @@ function transformToLis(obj){
   });
 }
 
-
+//went over this with Hexx
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
