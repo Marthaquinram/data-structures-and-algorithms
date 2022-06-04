@@ -49,7 +49,10 @@ Write a function named countNumberOfElements that, given an array as input, uses
 Note: You may not use the array's built-in length property.
 ------------------------------------------------------------------------------------------------ */
 
-const countNumberOfElements = (arr) => arr.reduce(); //I dont know how to do it without array.length
+const countNumberOfElements = (arr) => {
+
+  return arr.reduce(accumulator => accumulator +1, 0); //reduce iterates through array, and its taking a tally how many loops it goes through, acc gets returned after every loop.
+};
 
 
 
@@ -109,9 +112,12 @@ let starWarsData = [{
   birth_year: '19BBY',
   gender: 'female'
 }];
-
+//Write a function named returnNames that, given the Star Wars data, below, uses reduce to return an array containing the names of the characters.
 const returnNames = (arr) => {
-  // Solution code here...
+  return arr.reduce((accu, currentVal) => {
+    accu.push(currentVal.name);
+    return accu;
+  }, []);
 };
 
 /* ------------------------------------------------------------------------------------------------
