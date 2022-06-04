@@ -128,7 +128,10 @@ Write a function named citiesAtoJ that takes in an array of city names and uses 
 ------------------------------------------------------------------------------------------------ */
 
 const citiesAtoJ = (arr) => {
-  const patter = /^
+  const pattern = /^[A-J]/gm;
+  return arr.filter(city =>{
+    return city.match(pattern);
+  });
 };
 
 /* ------------------------------------------------------------------------------------------------
