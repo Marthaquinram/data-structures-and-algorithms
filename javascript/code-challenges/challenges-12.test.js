@@ -23,7 +23,7 @@ const validatePin = (pin) => {
   return pattern.test(pin);
 };
 
-
+// completed with hexx
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
