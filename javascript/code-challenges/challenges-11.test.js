@@ -19,10 +19,14 @@ Becomes:
 ------------------------------------------------------------------------------------------------ */
 
 function transformToLis(obj){
-  return Object.entries(obj).map(value => `<li>${value[0]}: ${value[1]}</li>`);
+  return Object.keys(obj).map(key => {
+    return (
+      `<li>${key}: ${obj [key]}</li>`
+    );
+  });
 }
-//class review code demo.
 
+//went over this with Hexx
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -33,9 +37,17 @@ Note: You might need to use the same method more than once.
 For example, count(5, [[1, 3, 5, 7, 9], [5, 5, 5], [1, 2, 3]]) returns 4.
 ------------------------------------------------------------------------------------------------ */
 
-// const count = (target, input) => {
-//   // Solution code here...
-// };
+const count = (target, input) => {
+  return input.reduce((accumulator, currentValue) => {
+    const rowCount = currentValue.reduce((innerAccumulator, innerCurrentValue) => {
+      if (innerCurrentValue === target){
+        return innerAccumulator +1;
+      }
+      return innerAccumulator;
+    }, 0);
+    return accumulator + rowCount;
+  }, 0);
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -47,9 +59,9 @@ You may want to use filter, map, or reduce for this problem, but are not require
 For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
-// const totalSum = (input) => {
-//   // Solution code here...
-// };
+const totalSum = (input) => {
+  return input.reduce((acc, currentValue)=> acc + currentValue.reduce((innerAcc, innerCurrValue) => innerAcc + innerCurrValue, 0), 0);
+};
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
