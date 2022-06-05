@@ -3,13 +3,26 @@
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
-Write a function named longestString that takes in an array of strings and returns the index position of the longest string. 
+Write a function named longestString that takes in an array of strings and returns the index position of the longest string.
 ------------------------------------------------------------------------------------------------ */
 
 const longestString = (arr) => {
-// Solution code here...
+  if (arr.length < 1){
+    return -1;
+  }
+  let ans = 0; //represents index of longest string.
+  for(let i = 1; i < arr.length; i++) {
+    if (arr[i].length > arr[ans].length){
+      ans = i;
+    }
+  }
+  return ans;
 };
-  
+// iterate over array.
+//.length to find length of string
+//return index position
+//if length of current string we are iterating is longer than the length of current string.
+//need to compare lengths
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -47,7 +60,7 @@ const standardizePhoneNumbers = (arr) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5 
+CHALLENGE 5
 
 Write a function named onlyOddChars that takes in a string and returns only the odd-index characters from that string.
 
@@ -59,7 +72,7 @@ const onlyOddChars = (str) => {
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 6 
+CHALLENGE 6
 
 Write a function named allHappy that takes in an array of strings and returns a Boolean indicating whether all those strings contain ":)".
 ------------------------------------------------------------------------------------------------ */
@@ -285,4 +298,3 @@ xdescribe('Testing challenge 11', () => {
     expect(characterByIndex(['wow', 'wow', 'wow'])).toStrictEqual(['w', 'o', 'w']);
   });
 });
-
