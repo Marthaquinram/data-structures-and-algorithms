@@ -68,7 +68,7 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  return str.split('').filter((element, idx) => idx % 2 === 1).join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -78,7 +78,7 @@ Write a function named allHappy that takes in an array of strings and returns a 
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  return arr.every(str => str.includes(':)'));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -169,9 +169,9 @@ Run your tests from the console: jest challenges-13.test.js
 
 describe('Testing challenge 1', () => {
   test('It should return an index position of the longest string', () => {
-    const strArray1 = ['Ginger', 'Goose', 'Tangerine', 'Rosie', 'Mario', 'Malaki']
+    const strArray1 = ['Ginger', 'Goose', 'Tangerine', 'Rosie', 'Mario', 'Malaki'];
     const strArray2 = [];
-    const strArray3= ['Ginger']
+    const strArray3= ['Ginger'];
 
     expect(longestString(strArray1)).toStrictEqual(2);
     expect(longestString(strArray2)).toStrictEqual(-1);
