@@ -31,9 +31,7 @@ Write a function named firstLetters that takes in an array of strings and return
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 'w', 'w', ':']
 ------------------------------------------------------------------------------------------------ */
 
-const firstLetters = (arr) => {
-  // Solution code here...
-};
+const firstLetters = (arr) => arr.map(letters => letters[0]);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -44,8 +42,9 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  // Solution code here...
+  return arr.filter(element => element.includes(':)'));
 };
+//this is filtering through the array and searching for an item/element in the array that includes :) spefically.
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -56,7 +55,7 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
+  return arr.map(dash => dash.replace(/[- )(]/g, ''));
 };
 
 /* ------------------------------------------------------------------------------------------------
