@@ -3,13 +3,26 @@
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 1 - Review
 
-Write a function named longestString that takes in an array of strings and returns the index position of the longest string. 
+Write a function named longestString that takes in an array of strings and returns the index position of the longest string.
 ------------------------------------------------------------------------------------------------ */
 
 const longestString = (arr) => {
-// Solution code here...
+  if (arr.length < 1){
+    return -1;
+  }
+  let ans = 0; //represents index of longest string.
+  for(let i = 1; i < arr.length; i++) {
+    if (arr[i].length > arr[ans].length){
+      ans = i;
+    }
+  }
+  return ans;
 };
-  
+// iterate over array.
+//.length to find length of string
+//return index position
+//if length of current string we are iterating is longer than the length of current string.
+//need to compare lengths
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 2
 
@@ -18,9 +31,7 @@ Write a function named firstLetters that takes in an array of strings and return
 For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['t', 'w', 'w', ':']
 ------------------------------------------------------------------------------------------------ */
 
-const firstLetters = (arr) => {
-  // Solution code here...
-};
+const firstLetters = (arr) => arr.map(letters => letters[0]);
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -31,8 +42,9 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 ------------------------------------------------------------------------------------------------ */
 
 const findHappiness = (arr) => {
-  // Solution code here...
+  return arr.filter(element => element.includes(':)'));
 };
+//this is filtering through the array and searching for an item/element in the array that includes :) spefically.
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 4
@@ -43,11 +55,11 @@ For example, (123) 456-7890 returns 1234567890
 ------------------------------------------------------------------------------------------------ */
 
 const standardizePhoneNumbers = (arr) => {
-  // Solution code here...
+  return arr.map(dash => dash.replace(/[- )(]/g, ''));
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 5 
+CHALLENGE 5
 
 Write a function named onlyOddChars that takes in a string and returns only the odd-index characters from that string.
 
@@ -55,17 +67,17 @@ For example, 'abcdefg' returns 'bdf'
 ------------------------------------------------------------------------------------------------ */
 
 const onlyOddChars = (str) => {
-  // Solution code here...
+  return str.split('').filter((element, idx) => idx % 2 === 1).join('');
 };
 
 /* ------------------------------------------------------------------------------------------------
-CHALLENGE 6 
+CHALLENGE 6
 
 Write a function named allHappy that takes in an array of strings and returns a Boolean indicating whether all those strings contain ":)".
 ------------------------------------------------------------------------------------------------ */
 
 const allHappy = (arr) => {
-  // Solution code here...
+  return arr.every(str => str.includes(':)'));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -156,9 +168,9 @@ Run your tests from the console: jest challenges-13.test.js
 
 describe('Testing challenge 1', () => {
   test('It should return an index position of the longest string', () => {
-    const strArray1 = ['Ginger', 'Goose', 'Tangerine', 'Rosie', 'Mario', 'Malaki']
+    const strArray1 = ['Ginger', 'Goose', 'Tangerine', 'Rosie', 'Mario', 'Malaki'];
     const strArray2 = [];
-    const strArray3= ['Ginger']
+    const strArray3= ['Ginger'];
 
     expect(longestString(strArray1)).toStrictEqual(2);
     expect(longestString(strArray2)).toStrictEqual(-1);
@@ -285,4 +297,3 @@ xdescribe('Testing challenge 11', () => {
     expect(characterByIndex(['wow', 'wow', 'wow'])).toStrictEqual(['w', 'o', 'w']);
   });
 });
-
