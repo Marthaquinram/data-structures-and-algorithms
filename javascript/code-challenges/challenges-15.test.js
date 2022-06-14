@@ -12,6 +12,7 @@ Write a function named screenForNames that takes in an array of strings and uses
 
 const screenForNames = (arr) => {
   // Solution code here...
+  //did get to work on these ran out of time.
 };
 
 /* ------------------------------------------------------------------------------------------------
