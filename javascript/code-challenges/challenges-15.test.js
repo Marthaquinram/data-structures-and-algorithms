@@ -11,8 +11,8 @@ Write a function named screenForNames that takes in an array of strings and uses
 ------------------------------------------------------------------------------------------------ */
 
 const screenForNames = (arr) => {
-  // Solution code here...
-  //did get to work on these ran out of time.
+  let pattern = /^(Mr|Mrs|Ms|Dr). [A-Za-z]+$/gm;
+  return arr.filter(reg => pattern.test(reg));
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -23,9 +23,8 @@ Write a function named toTitleCase that takes in an array of strings and returns
 For example, ['apple', 'banana', 'MacGyver'] returns ['Apple', 'Banana', 'MacGyver'].
 ------------------------------------------------------------------------------------------------ */
 
-const toTitleCase = (arr) => {
-  // Solution code here...
-};
+const toTitleCase = (arr) => arr.map(letters => letters[0].toUpperCase() + letters.slice(1));
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
@@ -102,7 +101,7 @@ let biggerThanLuke = (arr) => {
   const luke = arr.find(character => character.name === 'Luke Skywalker');
   return arr.filter(character => parseInt(character.mass) > Number(luke.mass)).reduce((acc, currVal, idx, arr) => {
     let delimiter = '';
-    if (idx === arr.length -1) {
+    if (idx === arr.length - 1) {
       delimiter = ' - ';
     }
     acc += delimiter + currVal.name;
@@ -148,9 +147,7 @@ http://www.insecure.com returns false because the URL is not secure
 https://secure.com returns true because the URL is secure
 https:/missingslash.org returns false because the URL is malformed
 ------------------------------------------------------------------------------------------------ */
-const isSecure = (url) => {
-  // Solution code here...
-};
+const isSecure = (url) => url.includes('https://');
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
